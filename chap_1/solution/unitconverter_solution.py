@@ -41,10 +41,6 @@ def convert_unit(value, src_unit, dest_unit):
     return result
 
 if __name__ == "__main__":
-    ## uncommenet the doctest to check correctness of implementation
-    """import doctest
-    doctest.testmod()"""
-
     value, src_unit, dest_unit = float(sys.argv[1]), sys.argv[2], sys.argv[4]
     print(value, src_unit, dest_unit)
     print(convert_unit(value, src_unit, dest_unit))
