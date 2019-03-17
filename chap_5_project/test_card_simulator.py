@@ -1,5 +1,6 @@
 import pytest
 from card_simulator import *
+#from card_simulator_solution import *
 
 suits = {'hearts', 'clubs', 'spades', 'diamonds'}
 numbers = set([i for i in range(2,15)])
