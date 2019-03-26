@@ -61,113 +61,26 @@ class Cell:
 
 
 class Generic(Cell):
-    count = 0
-
-    def __init__(self, position):
-        super().__init__(position=position)
-        Generic.count += 1
-
-    def _set_symbol(self):
-        return 'o'
-
-    def _set_lifespan(self):
-        return 100
-
-    def intended_position(self):
-        action = list(range(-2, 3))
-        return (self.x + choice(action), self.y + choice(action))
-
-    @staticmethod
-    def reduce_count():
-        Generic.count -= 1
-        Cell.reduce_count()
-
-    @staticmethod
-    def reset_count():
-        Generic.count = 0
-
+    # complete your implementation here
+    pass
 
 class Ecoli(Cell):
-    count = 0
-
-    def __init__(self, position):
-        super().__init__(position=position)
-        Ecoli.count += 1
-
-    def intended_position(self):
-        return (self.x, self.y)
-
-    def _set_symbol(self):
-        return 'e'
-
-    def _set_lifespan(self):
-        return 7
-
-    @staticmethod
-    def reduce_count():
-        Ecoli.count -= 1
-        Cell.reduce_count()
-
-    @staticmethod
-    def reset_count():
-        Ecoli.count = 0
-
+    # complete your implementation here
+    pass
 
 class Structure(Cell):
-    count = 0
-
-    def __init__(self, position):
-        super().__init__(position=position)
-        Structure.count += 1
-
-    def _set_symbol(self):
-        return 'S'
-
-    def _set_lifespan(self):
-        return 10000
-
-    @staticmethod
-    def reduce_count():
-        Structure.count -= 1
-        Cell.reduce_count()
-
-    @staticmethod
-    def reset_count():
-        Structure.count = 0
+    # complete your implementation here
+    pass
 
 class HunterKiller(Cell):
-    count = 0
     kill_count = 0
-
-    def __init__(self, position):
-        super().__init__(position=position)
-        HunterKiller.count += 1
-
-    def intended_position(self):
-        action = list(range(-1, 2))
-        return (self.x + choice(action), self.y + choice(action))
-
-    def _set_symbol(self):
-        return 'x'
-
-    def _set_lifespan(self):
-        return 350
-
-    @staticmethod
-    def reduce_count():
-        HunterKiller.count -= 1
-        Cell.reduce_count()
-
-    @staticmethod
-    def reset_count():
-        HunterKiller.count = 0
-        HunterKiller.kill_count = 0
+    # complete your implementation here
+    pass
 
 
 def reset_all_cell_counts():
     cell_types = [Cell, Generic, Ecoli, Structure, HunterKiller]
-    for i in cell_types:
-        i.reset_count()
+    #insert your code here
 
 
 class PetriDish:
@@ -309,130 +222,84 @@ class PetriDish:
 
 
 def activity1_task1():
-    petri_dish_5 = PetriDish(size=5)
-    petri_dish_5.begin_simulation()
-
-    petri_dish_10 = PetriDish(size=10)
-    petri_dish_10.begin_simulation()
-
-    petri_dish_20 = PetriDish(size=20)
-    petri_dish_20.begin_simulation()
-
+    petri_dish_5 = PetriDish()
+    petri_dish_10 = PetriDish()
+    petri_dish_20 = PetriDish()
     petri_dish_30 = PetriDish()
-    petri_dish_30.begin_simulation()
+
+    #replace the above with your implementation.
 
     return petri_dish_5, petri_dish_10, petri_dish_20, petri_dish_30
 
 
 def activity1_task2a():
-    petri_dish = PetriDish(30)
-    petri_dish.add_to_world(Cell())
-    petri_dish.begin_simulation()
+    petri_dish = PetriDish()
+    # replace with your implementation
 
     return petri_dish
-
 
 def activity1_task2b():
-    petri_dish = PetriDish(30)
-    petri_dish.add_to_world(Cell(position=(10, 10)))
-    petri_dish.begin_simulation()
+    petri_dish = PetriDish()
+    # replace with your implementation
 
     return petri_dish
-
 
 def activity1_task2c():
-    petri_dish = PetriDish(30)
-    petri_dish.add_to_world(Cell(position=(5, 5)))
-    petri_dish.add_to_world(Cell(position=(10, 10)))
-    petri_dish.add_to_world(Cell(position=(0, 0)))
-    petri_dish.add_to_world(Cell(position=(15, 15)))
-    petri_dish.begin_simulation()
+    petri_dish = PetriDish()
+    # replace with your implementation
 
     return petri_dish
-
-
-
-
-
-    return petri_dish, petri_dish2, petri_dish3
 
 def activity1_task3():
     seed(SEED_NUMBER) #do not alter this
-    petri_dish = PetriDish(30)
-    for _ in range(10):
-        petri_dish.add_to_world(Cell(position=choice(petri_dish.available_positions)))
+    petri_dish = PetriDish()
+    # replace with your implementation
 
-    petri_dish.begin_simulation()
     return petri_dish
 
 
 def activity2_task1():
     seed(1) #do not alter this
-    petri_dish = PetriDish(30)
-    for _ in range(10):
-        petri_dish.add_to_world(Generic(position=choice(petri_dish.available_positions)))
+    petri_dish = PetriDish()
+    #replace with your implementation
 
-    petri_dish.begin_simulation()
     return petri_dish
 
 
 def activity2_task2():
     seed(2) #do not alter this
-    petri_dish = PetriDish(30)
-    for _ in range(10):
-        petri_dish.add_to_world(Ecoli(position=choice(petri_dish.available_positions)))
+    petri_dish = PetriDish()
+    #replace with your implementation
 
-    petri_dish.begin_simulation()
     return petri_dish
 
 
 def activity2_task3():
     seed(3) #do not alter this
-    petri_dish = PetriDish(30)
-    for _ in range(10):
-        petri_dish.add_to_world(Structure(position=choice(petri_dish.available_positions)))
+    petri_dish = PetriDish()
+    #replace with your implementation
 
-    petri_dish.begin_simulation()
     return petri_dish
 
 def activity2_task4():
     seed(4) #do not alter this
-    petri_dish = PetriDish(30)
-    for _ in range(10):
-        petri_dish.add_to_world(HunterKiller(position=choice(petri_dish.available_positions)))
+    petri_dish = PetriDish()
+    #replace with your implementation
 
-    petri_dish.begin_simulation()
     return petri_dish
 
 
 def activity2_task5():
     seed(SEED_NUMBER) #do not alter this
-    petri_dish = PetriDish(30)
+    petri_dish = PetriDish()
+    #replace with your implementation
 
-    for _ in range(10):
-        petri_dish.add_to_world(Cell(position=choice(petri_dish.available_positions)))
-    for _ in range(10):
-        petri_dish.add_to_world(Generic(position=choice(petri_dish.available_positions)))
-    for _ in range(10):
-        petri_dish.add_to_world(Ecoli(position=choice(petri_dish.available_positions)))
-    for _ in range(10):
-        petri_dish.add_to_world(Structure(position=choice(petri_dish.available_positions)))
-    for _ in range(10):
-        petri_dish.add_to_world(HunterKiller(position=choice(petri_dish.available_positions)))
-
-    petri_dish.begin_simulation()
     return petri_dish
 
 
 def activity3_task1():
     seed(SEED_NUMBER) #do not alter this
-    petri_dish = PetriDish(30)
-    for _ in range(10):
-        petri_dish.add_to_world(Generic(position=choice(petri_dish.available_positions)))
-    for _ in range(20):
-        petri_dish.add_to_world(Ecoli(position=choice(petri_dish.available_positions)))
-    for _ in range(30):
-        petri_dish.add_to_world(HunterKiller(position=choice(petri_dish.available_positions)))
+    # replace with your implementation
 
     print(Cell.count, Generic.count, Ecoli.count, Structure.count, HunterKiller.count)
     return Cell.count, Generic.count, Ecoli.count, Structure.count, HunterKiller.count
@@ -441,6 +308,7 @@ def activity3_task1():
 def activity3_task2a():
     activity3_task1()
     activity3_task1()
+
     return Cell.count, Generic.count, Ecoli.count, Structure.count, HunterKiller.count
 
 
@@ -448,66 +316,33 @@ def activity3_task2b():
     activity3_task1()
     reset_all_cell_counts()
     activity3_task1()
+
     return Cell.count, Generic.count, Ecoli.count, Structure.count, HunterKiller.count
 
 
 def activity3_task3():
     seed(SEED_NUMBER) #do not alter this
-    petri_dish = PetriDish(30)
-    for _ in range(10):
-        petri_dish.add_to_world(Generic(position=choice(petri_dish.available_positions)))
-    for _ in range(20):
-        petri_dish.add_to_world(Ecoli(position=choice(petri_dish.available_positions)))
-    for _ in range(30):
-        petri_dish.add_to_world(HunterKiller(position=choice(petri_dish.available_positions)))
-
-    for _ in range(5):
-        Generic.reduce_count()
-        Ecoli.reduce_count()
+    # replace with your implementation
 
     print(Cell.count, Generic.count, Ecoli.count, Structure.count, HunterKiller.count)
     return Cell.count, Generic.count, Ecoli.count, Structure.count, HunterKiller.count
 
+
 def activity3_task4():
     seed(SEED_NUMBER) #do not alter this
-    petri_dish = PetriDish(30)
-    for _ in range(10):
-        petri_dish.add_to_world(Generic(position=choice(petri_dish.available_positions)))
-    for _ in range(20):
-        petri_dish.add_to_world(Ecoli(position=choice(petri_dish.available_positions)))
-    for _ in range(30):
-        petri_dish.add_to_world(HunterKiller(position=choice(petri_dish.available_positions)))
-
-    petri_dish.simulate_n_steps(iterations=5)
+    petri_dish = PetriDish()
+    # replace with your implementation
 
     print([i.lifespan for i in petri_dish.all_cells])
     return petri_dish
 
+
 def activity3_task5():
     seed(SEED_NUMBER)  # do not alter this
     reset_all_cell_counts() # do not alter this
-    petri_dish = PetriDish(30)
-    NUM_OF_GENERIC = 25
-    NUM_OF_ECOLI = 75
-    NUM_OF_HUNTER_KILLERS = 13
-    NUM_OF_STRUCTURE = 100
+    petri_dish = PetriDish()
+    # replace with your implementation
 
-
-
-    for _ in range(NUM_OF_GENERIC):
-        cell = Generic(position=choice(petri_dish.available_positions))
-        petri_dish.add_to_world(cell)
-    for _ in range(NUM_OF_ECOLI):
-        cell = Ecoli(position=choice(petri_dish.available_positions))
-        petri_dish.add_to_world(cell)
-    for _ in range(NUM_OF_HUNTER_KILLERS):
-        cell = HunterKiller(position=choice(petri_dish.available_positions))
-        petri_dish.add_to_world(cell)
-    for _ in range(NUM_OF_STRUCTURE):
-        cell = Structure(position=choice(petri_dish.available_positions))
-        petri_dish.add_to_world(cell)
-
-    petri_dish.begin_simulation(delay=0.01, movement=True)
     return petri_dish
 
 
@@ -516,21 +351,22 @@ if __name__ == '__main__':
     # uncomment the relevant task as needed. Complete the tasks in order.
 
 
-    activity1_task1()
-    activity1_task2a()
-    activity1_task2b()
-    activity1_task2c()
-    activity1_task3()
+    # activity1_task1()
+    # activity1_task2a()
+    # activity1_task2b()
+    # activity1_task2c()
+    # activity1_task3()
 
-    activity2_task1()
-    activity2_task2()
-    activity2_task3()
-    activity2_task4()
-    activity2_task5()
+    # activity2_task1()
+    # activity2_task2()
+    # activity2_task3()
+    # activity2_task4()
+    # activity2_task5()
 
-    activity3_task1()
-    activity3_task2a()
-    activity3_task2b()
-    activity3_task3()
-    activity3_task4()
-    activity3_task5()
+    # activity3_task1()
+    # activity3_task2a()
+    # activity3_task2b()
+    # activity3_task3()
+    # activity3_task4()
+    # activity3_task5()
+    pass
