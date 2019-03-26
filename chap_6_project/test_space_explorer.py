@@ -1,6 +1,6 @@
 import pytest
-# from space_explorer import *
-from space_explorer_solution import *
+from space_explorer import *
+#from space_explorer_solution import *
 
 
 def test_generate_available_coordinates_return_type():

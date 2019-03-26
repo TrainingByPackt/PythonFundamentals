@@ -1,4 +1,3 @@
-import pytest
 from card_simulator import *
 #from card_simulator_solution import *
 
