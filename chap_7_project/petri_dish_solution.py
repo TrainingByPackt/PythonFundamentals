@@ -396,6 +396,7 @@ def activity2_task3():
         petri_dish.add_to_world(Structure(position=choice(petri_dish.available_positions)))
 
     petri_dish.begin_simulation()
+
     return petri_dish
 
 def activity2_task4():
@@ -482,10 +483,11 @@ def activity3_task4():
     for _ in range(30):
         petri_dish.add_to_world(HunterKiller(position=choice(petri_dish.available_positions)))
 
-    petri_dish.simulate_n_steps(iterations=5)
+    petri_dish.simulate_n_steps(iterations=1)
 
-    print([i.lifespan for i in petri_dish.all_cells])
-    return petri_dish
+    list_of_cells = [i.lifespan for i in petri_dish.all_cells]
+    print(list_of_cells)
+    return petri_dish, list_of_cells
 
 
 def activity3_task5():
@@ -529,16 +531,17 @@ if __name__ == '__main__':
     # activity1_task2b()
     # activity1_task2c()
     # activity1_task3()
-    #
+
     # activity2_task1()
     # activity2_task2()
     # activity2_task3()
     # activity2_task4()
     # activity2_task5()
-    #
+
     # activity3_task1()
     # activity3_task2a()
     # activity3_task2b()
     # activity3_task3()
     # activity3_task4()
     activity3_task5()
+    pass

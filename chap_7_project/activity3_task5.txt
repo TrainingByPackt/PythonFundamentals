@@ -1,0 +1,32 @@
+|------------------------------|
+|            eeeeeeSeeeeeeSeS  |
+|S            SSeeeeeSeSeeeeee |
+|           S   SeSeSeeeeeeeS  |
+|S S SS         SeeeeeeeeeeeS  |
+|     S        SeeeSeeeSeeeeee |
+|S  S S     S eeeSeeeeeeeeeS   |
+| S           eeeeeeeeeeeSee   |
+|             eeeeeSeeeeee    S|
+| S  S       S Seeeeeeee      S|
+|   S      SS eeeeeeee   S    S|
+|             eeeeeeeee      S |
+|S  S          eeeeeS          |
+|              eee             |
+|     S         S  S    S      |
+|        S                     |
+|       S    S   S     S       |
+|             S     S          |
+|                  S          S|
+|             S S              |
+|      S          S S          |
+|                 S  SS S      |
+|            S                 |
+|        S   S                 |
+|         S       SS         S |
+| S         S             S    |
+|      S        S  S    S      |
+|S                SS S       S |
+|   S  SS           S          |
+|S         S    S     S        |
+|    S S         S   S         |
+|------------------------------|
