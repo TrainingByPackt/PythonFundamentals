@@ -119,9 +119,8 @@ class PetriDish:
         return world
 
     def add_to_world(self, cell):
-        self.world[(cell.x, cell.y)] = cell.symbol
-        self.all_cells.append(cell)
-        self.available_positions.remove((cell.x, cell.y))
+        # implement this
+        pass
 
     def _has_world_changed(self):
         start = self.world_state[-1]
@@ -221,15 +220,32 @@ class PetriDish:
 
 
 
-def activity1_task1():
-    petri_dish_5 = PetriDish()
-    petri_dish_10 = PetriDish()
-    petri_dish_20 = PetriDish()
-    petri_dish_30 = PetriDish()
+def activity1_task1a():
+    petri_dish = PetriDish()
+    # replace with your implementation
 
-    #replace the above with your implementation.
+    return petri_dish
 
-    return petri_dish_5, petri_dish_10, petri_dish_20, petri_dish_30
+
+def activity1_task1b():
+    petri_dish = PetriDish()
+    # replace with your implementation
+
+    return petri_dish
+
+
+def activity1_task1c():
+    petri_dish = PetriDish()
+    # replace with your implementation
+
+    return petri_dish
+
+
+def activity1_task1d():
+    petri_dish = PetriDish()
+    # replace with your implementation
+
+    return petri_dish
 
 
 def activity1_task2a():
@@ -351,18 +367,21 @@ if __name__ == '__main__':
     # uncomment the relevant task as needed. Complete the tasks in order.
 
 
-    # activity1_task1()
+    # activity1_task1a()
+    # activity1_task1b()
+    # activity1_task1c()
+    # activity1_task1d()
     # activity1_task2a()
     # activity1_task2b()
     # activity1_task2c()
     # activity1_task3()
-
+    #
     # activity2_task1()
     # activity2_task2()
     # activity2_task3()
     # activity2_task4()
     # activity2_task5()
-
+    #
     # activity3_task1()
     # activity3_task2a()
     # activity3_task2b()

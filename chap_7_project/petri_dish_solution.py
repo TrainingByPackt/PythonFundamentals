@@ -308,20 +308,28 @@ class PetriDish:
 
 
 
-def activity1_task1():
-    petri_dish_5 = PetriDish(size=5)
-    petri_dish_5.begin_simulation()
+def activity1_task1a():
+    petri_dish = PetriDish(size=5)
+    petri_dish.begin_simulation()
+    return petri_dish
 
-    petri_dish_10 = PetriDish(size=10)
-    petri_dish_10.begin_simulation()
 
-    petri_dish_20 = PetriDish(size=20)
-    petri_dish_20.begin_simulation()
+def activity1_task1b():
+    petri_dish = PetriDish(size=10)
+    petri_dish.begin_simulation()
+    return petri_dish
 
-    petri_dish_30 = PetriDish()
-    petri_dish_30.begin_simulation()
 
-    return petri_dish_5, petri_dish_10, petri_dish_20, petri_dish_30
+def activity1_task1c():
+    petri_dish = PetriDish(size=20)
+    petri_dish.begin_simulation()
+    return petri_dish
+
+
+def activity1_task1d():
+    petri_dish = PetriDish()
+    petri_dish.begin_simulation()
+    return petri_dish
 
 
 def activity1_task2a():
@@ -350,11 +358,6 @@ def activity1_task2c():
 
     return petri_dish
 
-
-
-
-
-    return petri_dish, petri_dish2, petri_dish3
 
 def activity1_task3():
     seed(SEED_NUMBER) #do not alter this
@@ -468,6 +471,7 @@ def activity3_task3():
     print(Cell.count, Generic.count, Ecoli.count, Structure.count, HunterKiller.count)
     return Cell.count, Generic.count, Ecoli.count, Structure.count, HunterKiller.count
 
+
 def activity3_task4():
     seed(SEED_NUMBER) #do not alter this
     petri_dish = PetriDish(30)
@@ -482,6 +486,7 @@ def activity3_task4():
 
     print([i.lifespan for i in petri_dish.all_cells])
     return petri_dish
+
 
 def activity3_task5():
     seed(SEED_NUMBER)  # do not alter this
@@ -516,21 +521,24 @@ if __name__ == '__main__':
     # uncomment the relevant task as needed. Complete the tasks in order.
 
 
-    activity1_task1()
-    activity1_task2a()
-    activity1_task2b()
-    activity1_task2c()
-    activity1_task3()
-
-    activity2_task1()
-    activity2_task2()
-    activity2_task3()
-    activity2_task4()
-    activity2_task5()
-
-    activity3_task1()
-    activity3_task2a()
-    activity3_task2b()
-    activity3_task3()
-    activity3_task4()
+    # activity1_task1a()
+    # activity1_task1b()
+    # activity1_task1c()
+    # activity1_task1d()
+    # activity1_task2a()
+    # activity1_task2b()
+    # activity1_task2c()
+    # activity1_task3()
+    #
+    # activity2_task1()
+    # activity2_task2()
+    # activity2_task3()
+    # activity2_task4()
+    # activity2_task5()
+    #
+    # activity3_task1()
+    # activity3_task2a()
+    # activity3_task2b()
+    # activity3_task3()
+    # activity3_task4()
     activity3_task5()
