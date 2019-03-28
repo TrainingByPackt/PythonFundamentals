@@ -69,18 +69,18 @@ To really stand out in this code delivery, TargetCRM offered you a bonus if you 
  implement a more robust and scalable way to read the raw csv data and return the number of users
   in the mailing list. 
 
-##**Below there is a general overview of this bonus project:**
+## **Below there is a general overview of this bonus project:**
 - Install the pandas package 
 - Read the csv file into a pandas dataframe
 - Filter out the unsubscribed users
 - Return the number of active users (the remaining rows)
 
 
-## **Unit Testing*8
+## **Unit Testing**
 
 To run the tests, just execute the test.py file in your preferred IDE (Pycharm in our case).
 To run tests separately, select the test you wish to run, click the right button, 
-then "Run Unittests in test.py" in Pycharm.  
+then "Run Unittests in test.py" in Pycharm.
 
 To run the test from command line, cd into the project's folder, then run the command: ``python test.py``.
 
