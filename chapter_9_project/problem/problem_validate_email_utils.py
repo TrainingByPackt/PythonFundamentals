@@ -1,26 +1,18 @@
-# Importing user-defined exception
-from solution.UserDefinedException import EmailNotValidError
+# Import user-defined exception
 
 
 def is_email_valid(mailing_list):
     """
-        This function validates whether the email addresses in the current mailing list are valid emails.
-        To be considered a valid email, for the purpose of the project, we considered any email that contains
-        a `@` character.
+      Your docstring documentation starts here.
 
-        Example:
-            'pgatherell6-1.com` should raise an EmailNotValidError exception taking into account this email
-            does not contain the `@` symbol.
+      For more information on how to proper document your function, please refer to the official PEP8:
+       https://www.python.org/dev/peps/pep-0008/#documentation-strings.
+
+   """
 
 
-    :param mailing_list: the current mailing list with the active users
-    :return: N/A
-    """
+for key, email in  # Loop through the mailing list:
 
-    # Looping through the mailing list
-    for key, email in mailing_list.items():
+    if '@' not in  # Check if the email contains an @:
 
-        # Check if the email contains an @
-        if '@' not in email[1]:
-            # Raise an EmailNotValidError exception if the @ is not present
-            raise EmailNotValidError('Email format not valid.')
+        raise  # Raise an EmailNotValidError exception if the @ is not present

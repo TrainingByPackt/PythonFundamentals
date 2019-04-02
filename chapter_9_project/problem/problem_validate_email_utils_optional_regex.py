@@ -1,51 +1,40 @@
-# Importing re library
-import re
-# Importing user-defined exception
-from solution.UserDefinedException import EmailNotValidError
+# Import library to work with regex patterns
+
+# Import user-defined exception
 
 
 def is_email_valid_optional_regex(mailing_list):
-    """
+     """
+       Your docstring documentation starts here.
 
-        This function extends the previous one by simply adding a regex validation to check if an email is valid.
+       For more information on how to proper document your function, please refer to the official PEP8:
+        https://www.python.org/dev/peps/pep-0008/#documentation-strings.
 
-        Example:
-            '41c30786-aa84-4d60-9879-0c53f8fad970': ['cgoodleyh', 'ccowlinj@hp.com', 'active'],
-            '480fb04a-d7cd-47c5-8079-b580cb14b4d9': ['csheraton4', 'pgatherell6-1.com', 'active']
-
-            This should return:
-                - '41c30786-aa84-4d60-9879-0c53f8fad970', which is the id of the user with a valid email
-                - Print a user-friendly message for the casted exception: 'An email in the mailing list is not valid.'
-
-    :param mailing_list: the current mailing list with the active users
-    :return: N/A
     """
 
     # Array to hold user ids
     final_users_list = []
 
-    # The regex pattern to validate emails
-    regex = r"[^@]+@[^@]+\.[^@]+"
+
+    regex = # The regex pattern to validate emails
 
     # Inserted a try.., except.. block to cast the exception
     try:
         # Loop through the mailing list
-        for key, email in mailing_list.items():
+        for key, email in # Your mailing list:
 
-            # Check if the @ is present in the email and check if the email passes the regex patter
-            if '@' in email[1] and \
-                    re.match(regex, email[1]):
+
+            if '@' in ... # Check if the @ is present in the email and check if the email passes the regex pattern
+
                 # Append the id of users with valid emails
-                final_users_list.append(key)
+
         else:
 
-            # Raises an EmailNotValidError otherwise
-            raise EmailNotValidError('Email format not valid.')
-    except EmailNotValidError:
 
-        # Return a user-friendly message to cast the exception
-        return 'An email in the mailing list is not valid.'
+            raise # Raises an EmailNotValidError otherwise
+    except # Your user-defined exception:
+
+        return # Return a user-friendly message to cast the exception
     finally:
 
-        # Return the id of the users with valid email
-        return final_users_list
+        return # Return the id of the users with valid email
