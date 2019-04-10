@@ -1,5 +1,6 @@
-# Importing unittest package
+import sys
 import time
+# Importing unittest package
 import unittest
 
 # Importing simple mailing list challenge
@@ -7,6 +8,8 @@ from chapter_4_project.solution.functions import update_mailing_list as mailing_
 # Importing extended mailing list challenge
 from chapter_4_project.solution.functions_extended import update_mailing_list_extended as mailing_list_challenge_ext
 from chapter_4_project.solution.functions_optional import send_message_interval as smi
+
+sys.path.append("../")
 
 # The dictionary with the original mailing list
 mailing_list = dict({'307919e9-d6f0-4ecf-9bef-c1320db8941a': ['afarrimond0', 'thartus0@reuters.com', 'opt-out'],
