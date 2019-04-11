@@ -1,4 +1,5 @@
 # Importing unittest package
+import sys
 import unittest
 
 from chapter_9_project.solution.UserDefinedException import EmailNotValidError
@@ -6,6 +7,8 @@ from chapter_9_project.solution.validate_email_utils import is_email_valid
 from chapter_9_project.solution.validate_email_utils_extended import is_email_valid_extended
 from chapter_9_project.solution.validate_email_utils_extended_finally import is_email_valid_extended_finally
 from chapter_9_project.solution.validate_email_utils_optional_regex import is_email_valid_optional_regex
+
+sys.path.append("../")
 
 updated_mailing_list = dict({
     '41c30786-aa84-4d60-9879-0c53f8fad970': ['cgoodleyh', 'ccowlinj@hp.com', 'active'],

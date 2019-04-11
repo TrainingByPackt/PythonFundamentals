@@ -1,4 +1,5 @@
 # Importing unittest package
+import sys
 import unittest
 
 # Importing function from main to test
@@ -6,6 +7,8 @@ from chapter_8_project.solution.main import mailing_list_utils_extended as mlu_e
 # Importing the function
 from chapter_8_project.solution.modules_package_file import mailinglist_validation_util
 from chapter_8_project.solution.optional_pandas import update_mailing_list_pandas
+
+sys.path.append("../")
 
 # The output file length, which is the expected output from the tested functions
 output_file_length = 5
