@@ -1,4 +1,5 @@
 import sys
+sys.path.append('../')
 from problem import convert_unit    
 if __name__ == "__main__":
     if len(convert_unit.__doc__.split()) <= 0:
