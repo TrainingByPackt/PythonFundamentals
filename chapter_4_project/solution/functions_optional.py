@@ -1,7 +1,7 @@
 # Importing extended mailing list challenge
 import time
 
-from solution.update_mailing_list import update_mailing_list_extended as ml_updater
+from solution.update_mailing_list import update_mailing_list as ml_updater
 
 
 def send_message_interval(mailing_list):

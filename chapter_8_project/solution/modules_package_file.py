@@ -1,6 +1,6 @@
 import csv
 
-from solution.update_mailing_list import update_mailing_list_extended
+from solution.update_mailing_list import update_mailing_list
 
 # Global variable to set the base path to our dataset folder
 base_url = '../dataset/'
@@ -55,7 +55,7 @@ def read_mailing_list_file(filename, io_mode):
     mailing_dict = (dict(mailing_list_buffer))
 
     # Call the `update_mailing_list_extended` from chapter 4 passing the mailing list dictionary
-    updated_mailing_list_ids = update_mailing_list_extended(mailing_dict)
+    updated_mailing_list_ids = update_mailing_list(mailing_dict)
 
     # Return the resulting ids of the active users
     return updated_mailing_list_ids

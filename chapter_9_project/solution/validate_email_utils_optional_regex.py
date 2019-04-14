@@ -1,5 +1,6 @@
 # Importing re library
 import re
+
 # Importing user-defined exception
 from chapter_9_project.solution.UserDefinedException import EmailNotValidError
 

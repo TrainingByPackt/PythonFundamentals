@@ -25,9 +25,10 @@ def update_mailing_list_extended(mailing_list):
     # An array to collect the final output
     ids = []
 
-    # Sort the updated mailing list alphabetically by `nickname`
-    for items in # Your dictionary:
-        # Append only the ids of the active users
+    # Loop through the updated mailing list and append the ids of the active users to the `id` list
+    for key, value in  # Your updated dictionary:
+    # Append only the ids of the active users
 
     # Returns the updated mailing list with the active users
     return ids
+
