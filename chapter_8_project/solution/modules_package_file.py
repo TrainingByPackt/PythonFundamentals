@@ -1,6 +1,6 @@
 import csv
 
-from solution.functions_extended import update_mailing_list_extended
+from solution.update_mailing_list import update_mailing_list_extended
 
 # Global variable to set the base path to our dataset folder
 base_url = '../dataset/'
