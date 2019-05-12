@@ -1,5 +1,5 @@
-from card_simulator import *
-#from card_simulator_solution import *
+# from card_simulator import *
+from card_simulator_solution import *
 
 suits = {'hearts', 'clubs', 'spades', 'diamonds'}
 numbers = set([i for i in range(2,15)])
@@ -114,3 +114,29 @@ def test_remove_suit_from_deck():
         answer = base-deleted_set
         assert result == list(sorted(answer))
 
+def test_black_jack_player_win():
+    seed(551)
+    user_input = ['h', 's']
+    result = create_blackjack_game(user_input)
+    assert result == 1
+
+
+def test_black_jack_dealer_win():
+    seed(551)
+    user_input = ['h', 'h', 's']
+    result = create_blackjack_game(user_input)
+    assert result == -1
+
+
+def test_black_jack_dealer_wins2():
+    seed(551)
+    user_input = ['s']
+    result = create_blackjack_game(user_input)
+    assert result == -1
+
+
+def test_black_jack_quit():
+    seed(551)
+    user_input = ['q']
+    result = create_blackjack_game(user_input)
+    assert result == 0
