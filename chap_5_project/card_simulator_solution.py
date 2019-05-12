@@ -4,21 +4,6 @@ from os import linesep
 
 suits = {'hearts', 'clubs', 'spades', 'diamonds'}
 numbers = set([i for i in range(2,15)])
-number_mapping = {
-    2: '2',
-    3: '3',
-    4: '4',
-    5: '5',
-    6: '6',
-    7: '7',
-    8: '8',
-    9: '9',
-    10: '10',
-    11: 'J',
-    12: 'Q',
-    13: 'K',
-    14: 'A',
-}
 # seed(0)
 # seed(6)
 # seed(322) # dealer wins
@@ -220,7 +205,8 @@ def create_blackjack_game(user_input):
 
 
 if __name__ == '__main__':
-    create_blackjack_game(None)
+    pass
+    # create_blackjack_game(None)
 
 
 
