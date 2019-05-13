@@ -97,7 +97,7 @@ def draw_card(deck):
     return card
 
 
-def display_opponent(opponent, start=False):
+def display_dealer(opponent, start=False):
     print('Dealer:')
     if start:
         the_output = [opponent[0], ('?', '?')]
@@ -135,7 +135,6 @@ def check_cards(player):
 
 
 def create_blackjack_game(user_input):
-    # setup players, deck and deal initial cards
     opponent = []
     player = []
     deck = create_standard_deck()
@@ -143,9 +142,10 @@ def create_blackjack_game(user_input):
     opponent.append(draw_card(deck))
     player.append(draw_card(deck))
     player.append(draw_card(deck))
+
     player_count = get_count(player)
     dealer_count = get_count(opponent)
-    display_opponent(opponent, start=True)
+    display_dealer(opponent, start=True)
     display_player(player)
 
     if not user_input:
@@ -161,7 +161,7 @@ def create_blackjack_game(user_input):
 
         if player_action == 'h':
             player.append(draw_card(deck))
-            display_opponent(opponent, start=True)
+            display_dealer(opponent, start=True)
             display_player(player)
             player_result = check_cards(player)
             player_count = get_count(player)
@@ -175,7 +175,7 @@ def create_blackjack_game(user_input):
             while get_count(opponent) < 17:
                 print('Dealer hits!')
                 opponent.append(draw_card(deck))
-                display_opponent(opponent)
+                display_dealer(opponent)
                 display_player(player)
                 dealer_result = check_cards(opponent)
                 dealer_count = get_count(opponent)

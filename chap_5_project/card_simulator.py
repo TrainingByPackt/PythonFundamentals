@@ -65,7 +65,7 @@ def draw_card(deck):
     pass
 
 
-def display_opponent(opponent, start=False):
+def display_dealer(opponent, start=False):
     print('Dealer:')
     if start:
         the_output = [opponent[0], ('?', '?')]
@@ -90,22 +90,9 @@ def check_cards(player):
 
 
 def create_blackjack_game(user_input):
-    # Dont do anything with user_input, its just for automated testing.
-    # This function essentially requires no input and just runs the simulation.
-    # setup players, deck and deal initial cards
-    opponent = []
-    player = []
-    deck = create_standard_deck()
+    # FIRST SECTION INSERT YOUR CODE HERE
+    # REPLACE WITH YOUR CODE
 
-    # implement code to draw two cards for each player using the draw_card function and store in appropriate list
-
-    # get a count for each player
-    player_count = get_count(player)
-    dealer_count = get_count(opponent)
-
-    # displays board
-    display_opponent(opponent, start=True)
-    display_player(player)
 
     if not user_input:
         player_action = input('press h to hit, s to stand, q to quit.').lower().strip(linesep)
@@ -120,32 +107,14 @@ def create_blackjack_game(user_input):
 
         if player_action == 'h':
             pass
-            # implement logic for the player hitting
-
-            display_opponent(opponent, start=True)
-            display_player(player)
-
-            player_result = check_cards(player)
-            player_count = get_count(player)
-
-            # implement logic for checking if player won or lost.
+            # SECOND SECTION INSERT YOUR CODE HERE
+            # REPLACE WITH YOUR CODE
         else:
-            while get_count(opponent) < 17:
-                print('Dealer hits!')
-                opponent.append(draw_card(deck))
-                display_opponent(opponent)
-                display_player(player)
-                dealer_result = check_cards(opponent)
-                dealer_count = get_count(opponent)
-                if dealer_result == 'WIN':
-                    print('Dealer wins.')
-                    return -1
-                elif dealer_result == 'BUST':
-                    print('Dealer Busts, you win.')
-                    return 1
+            while True:
+                # THIRD SECTION INSERT YOUR CODE HERE
+                # REPLACE WITH YOUR CODE
 
-            print('Player: {}, Dealer: {}'.format(player_count, dealer_count))
-            # implement logic for checking who had the highest count of no one busted.
+                pass
 
         if not user_input:
             player_action = input('press h to hit, s to stand, q to quit.').lower().strip(linesep)
