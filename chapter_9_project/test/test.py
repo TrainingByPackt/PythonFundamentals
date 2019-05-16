@@ -2,12 +2,15 @@
 import sys
 import unittest
 
+from chapter_9_project.solution.BlackListProviderException import BlackListProviderException
 from chapter_9_project.solution.UserDefinedException import EmailNotValidError
 from chapter_9_project.solution.validate_email_utils import is_email_valid
 from chapter_9_project.solution.validate_email_utils_extended import is_email_valid_extended
 from chapter_9_project.solution.validate_email_utils_extended_finally import is_email_valid_extended_finally
 from chapter_9_project.solution.validate_email_utils_optional_part1 import is_email_valid_optional_regex
-from chapter_9_project.solution.validate_email_utils_optional_part2 import is_provider_valid_blacklist_optional
+from chapter_9_project.solution.validate_email_utils_optional_part2 import \
+    is_provider_valid_blacklist_optional_exception, \
+    is_provider_valid_blacklist_optional_len
 
 sys.path.append("../")
 
@@ -116,26 +119,26 @@ class TestValidEmailExceptionHandling(unittest.TestCase):
         """
 
         # Calling the target function and caching the result
-        result = len(is_provider_valid_blacklist_optional(updated_mailing_list))
+        result = len(is_provider_valid_blacklist_optional_len(updated_mailing_list))
 
         self.assertEqual(result, updated_mailing_list_with_valid_providers)
 
-    # def test_provider_valid_blacklist_exception_optional(self):
-    #     """
-    #         TODO
-    #
-    #        Example:
-    #             is_email_valid_optional_regex(updated_mailing_list)
-    #
-    #             This function call must return a list of length 3 with the filtered mailing list.
-    #
-    #     :return: N/A
-    #     """
-    #
-    #     # Check if the result matches the expected output
-    #     with self.assertRaises(BlackListProviderException):
-    #         # Calling the target function and caching the result
-    #         is_provider_valid_blacklist_optional(updated_mailing_list)
+    def test_provider_valid_blacklist_exception_optional(self):
+        """
+            TODO
+
+           Example:
+                is_email_valid_optional_regex(updated_mailing_list)
+
+                This function call must return a list of length 3 with the filtered mailing list.
+
+        :return: N/A
+        """
+
+        # Check if the result matches the expected output
+        with self.assertRaises(BlackListProviderException):
+            # Calling the target function and caching the result
+            is_provider_valid_blacklist_optional_exception(updated_mailing_list)
 
 
 if __name__ == '__main__':
