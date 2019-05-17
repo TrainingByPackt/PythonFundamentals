@@ -108,12 +108,7 @@ class TestValidEmailExceptionHandling(unittest.TestCase):
 
     def test_provider_valid_blacklist_optional(self):
         """
-            TODO
-
-           Example:
-                is_email_valid_optional_regex(updated_mailing_list)
-
-                This function call must return a list of length 3 with the filtered mailing list.
+            Tests whether the function returns the updated mailing list length.
 
         :return: N/A
         """
@@ -125,12 +120,7 @@ class TestValidEmailExceptionHandling(unittest.TestCase):
 
     def test_provider_valid_blacklist_exception_optional(self):
         """
-            TODO
-
-           Example:
-                is_email_valid_optional_regex(updated_mailing_list)
-
-                This function call must return a list of length 3 with the filtered mailing list.
+            Tests whether the function raises a BlackListProviderException exception.
 
         :return: N/A
         """
