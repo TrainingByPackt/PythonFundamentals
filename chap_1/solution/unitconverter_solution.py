@@ -41,7 +41,11 @@ def convert_unit(value, src_unit, dest_unit):
     return result
 
 if __name__ == "__main__":
-    value, src_unit, dest_unit = float(sys.argv[1]), sys.argv[2], sys.argv[4]
+    try:
+        value = float(sys.argv[1])
+    except Exception as e:
+        print("Make sure the value is valid floating point number", str(e))
+    src_unit, dest_unit = sys.argv[2], sys.argv[4]
     print(value, src_unit, dest_unit)
     print(convert_unit(value, src_unit, dest_unit))
 
