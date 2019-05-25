@@ -1,6 +1,8 @@
 import sys
 sys.path.append('../')
-from problem import convert_unit    
+#from problem.unitconverter import convert_unit    
+from solution.unitconverter_solution import convert_unit
+
 if __name__ == "__main__":
     if len(convert_unit.__doc__.split()) <= 0:
         print("Please write a docstring describing the function.")
