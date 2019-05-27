@@ -1,8 +1,8 @@
 import sys
 sys.path.append('../')
 
-#from solution.incometaxcalculator_solution import calculate_tax
-from problem.findtopper import rank_user
+from solution.incometaxcalculator_solution import calculate_tax
+#from problem.incometaxcalculator import calculate_tax
 if __name__ == "__main__":
     assert(calculate_tax(1500000, 200000, 150000) == 163800)
     assert(calculate_tax(500000, 200000, 150000) == 0)
