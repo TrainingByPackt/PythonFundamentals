@@ -1,4 +1,4 @@
-from solution import modules_package_file as mlu
+from Lesson08.solution import modules_package_file as mlu
 
 
 def mailing_list_utils_extended():

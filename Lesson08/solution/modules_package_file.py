@@ -1,6 +1,6 @@
 import csv
 
-from solution.update_mailing_list import update_mailing_list
+from Lesson08.solution.update_mailing_list import update_mailing_list
 
 # Global variable to set the base path to our dataset folder
 base_url = '../dataset/'
