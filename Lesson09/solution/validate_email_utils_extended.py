@@ -1,5 +1,5 @@
 # Importing user-defined exception
-from chapter_9_project.solution.UserDefinedException import EmailNotValidError
+from Lesson09.solution.UserDefinedException import EmailNotValidError
 
 
 def is_email_valid_extended(mailing_list):

@@ -2,13 +2,13 @@
 import sys
 import unittest
 
-from chapter_9_project.solution.BlackListProviderException import BlackListProviderException
-from chapter_9_project.solution.UserDefinedException import EmailNotValidError
-from chapter_9_project.solution.validate_email_utils import is_email_valid
-from chapter_9_project.solution.validate_email_utils_extended import is_email_valid_extended
-from chapter_9_project.solution.validate_email_utils_extended_finally import is_email_valid_extended_finally
-from chapter_9_project.solution.validate_email_utils_optional_part1 import is_email_valid_optional_regex
-from chapter_9_project.solution.validate_email_utils_optional_part2 import \
+from Lesson09.solution.BlackListProviderException import BlackListProviderException
+from Lesson09.solution.UserDefinedException import EmailNotValidError
+from Lesson09.solution.validate_email_utils import is_email_valid
+from Lesson09.solution.validate_email_utils_extended import is_email_valid_extended
+from Lesson09.solution.validate_email_utils_extended_finally import is_email_valid_extended_finally
+from Lesson09.solution.validate_email_utils_optional_part1 import is_email_valid_optional_regex
+from Lesson09.solution.validate_email_utils_optional_part2 import \
     is_provider_valid_blacklist_optional_exception, \
     is_provider_valid_blacklist_optional_len
 

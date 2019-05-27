@@ -4,10 +4,10 @@ import time
 import unittest
 
 # Importing simple mailing list challenge
-from chapter_4_project.solution.functions import update_mailing_list as mailing_list_challenge
+from Lesson04.solution.functions import update_mailing_list as mailing_list_challenge
 # Importing extended mailing list challenge
-from chapter_4_project.solution.functions_extended import update_mailing_list_extended as mailing_list_challenge_ext
-from chapter_4_project.solution.functions_optional import send_message_interval as smi
+from Lesson04.solution.functions_extended import update_mailing_list_extended as mailing_list_challenge_ext
+from Lesson04.solution.functions_optional import send_message_interval as smi
 
 sys.path.append("../")
 
@@ -116,7 +116,7 @@ class TestMailingList(unittest.TestCase):
                     '9e8fb253-d80d-47b5-8e1d-9a89b5bcc41b',
                     'a50bd76f-bc4d-4141-9b5d-3bfb9cb4c65d']
 
-        self.assertEqual(result, response)
+        self.assertEqual(set(result), set(response))
         self.assertGreaterEqual(elapsed_time, delay_response)
         self.assertLessEqual(elapsed_time, (delay_response + deviation))
 

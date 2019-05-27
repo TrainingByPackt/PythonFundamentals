@@ -3,7 +3,7 @@
 # Importing user-defined exceptions
 import re
 
-from chapter_9_project.solution.BlackListProviderException import BlackListProviderException
+from Lesson09.solution.BlackListProviderException import BlackListProviderException
 
 
 def is_provider_valid_blacklist_optional_len(mailing_list):
