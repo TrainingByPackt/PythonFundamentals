@@ -1,10 +1,10 @@
 from functions import AccessApi as mws
 import pytest
 
-base_url: str = "https://raw.githubusercontent.com/bclipp/"
-billing_end_point: str = "APItesting/master/getBillingInfo.json"
-customer_end_point: str = "APItesting/master/getCustomers.json"
-site_end_point: str = "APItesting/master/getSites.json"
+base_url: str = "https://raw.githubusercontent.com/TrainingByPackt/PythonFundamentals/master/Capstone/"
+billing_end_point: str = "API/getBillingInfo.json"
+customer_end_point: str = "API/getCustomers.json"
+site_end_point: str = "API/getSites.json"
 
 # TASK 2
 
