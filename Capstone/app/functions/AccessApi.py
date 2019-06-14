@@ -1,7 +1,4 @@
-# boiler plate code:
 
-# objects for  abstracted communication
-# does the HTTP interaction returns the JSON
 import requests
 import json
 
