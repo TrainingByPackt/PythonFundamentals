@@ -1,6 +1,6 @@
-import pytest
-from space_explorer import *
-#from space_explorer_solution import *
+#import pytest
+#from space_explorer import *
+from space_explorer_solution import *
 
 
 def test_generate_available_coordinates_return_type():
@@ -56,14 +56,14 @@ def test_get_unique_objects():
     assert unique_objects == frozenset(['3', '2', '1', 'a', 'b', 'c', 'S'])
 
 
-def test_display_world_return_type():
-    assert type(display_world(generate_empty_map(generate_available_coordinates(MAP_SIZE)))) == str
+def test_display_galaxy_return_type():
+    assert type(display_galaxy(generate_empty_map(generate_available_coordinates(MAP_SIZE)))) == str
 
 
-def test_display_world():
-    expected_output = open('test_display_world_output.txt')
+def test_display_galaxy():
+    expected_output = open('test_display_galaxy_output.txt')
     output = expected_output.read()
-    assert output == display_world(generate_empty_map(generate_available_coordinates(MAP_SIZE)))
+    assert output == display_galaxy(generate_empty_map(generate_available_coordinates(MAP_SIZE)))
 
 
 def test_calculate_euclidean_distance_return_type():
@@ -80,48 +80,48 @@ def test_calculate_euclidean_distance():
     assert calculate_euclidean_distance((4, 4)) == 5
 
 
-def test_populate_world_map_return_type():
+def test_populate_galaxy_map_return_type():
     available_symbols_1 = define_possible_objects(punctuation)
     occupied_coordinates1 = list()
     available_coordinates_1 = generate_available_coordinates(MAP_SIZE)
-    world_map_1 = generate_empty_map(available_coordinates_1)
-    assert type(populate_world_map(available_symbols = available_symbols_1,
+    galaxy_map_1 = generate_empty_map(available_coordinates_1)
+    assert type(populate_galaxy_map(available_symbols = available_symbols_1,
                                    available_coordinates = available_coordinates_1,
                                    occupied_coordinates = occupied_coordinates1,
-                                   world_map = world_map_1)) == list
+                                   galaxy_map = galaxy_map_1)) == list
 
 
-def test_populate_world_map():
+def test_populate_galaxy_map():
     seed(SEED_NUMBER)
     available_symbols_1 = define_possible_objects(punctuation)
     occupied_coordinates1 = list()
     available_coordinates_1 = generate_available_coordinates(MAP_SIZE)
-    world_map_1 = generate_empty_map(available_coordinates_1)
+    galaxy_map_1 = generate_empty_map(available_coordinates_1)
     available_symbols_2 = define_possible_objects('^&*'*5)
     occupied_coordinates2 = list()
     available_coordinates_2 = generate_available_coordinates(MAP_SIZE)
-    world_map_2 = generate_empty_map(available_coordinates_2)
+    galaxy_map_2 = generate_empty_map(available_coordinates_2)
 
 
-    exploration_list_1 = populate_world_map(available_symbols = available_symbols_1,
+    exploration_list_1 = populate_galaxy_map(available_symbols = available_symbols_1,
                                    available_coordinates = available_coordinates_1,
                                    occupied_coordinates = occupied_coordinates1,
-                                   world_map = world_map_1)
+                                   galaxy_map = galaxy_map_1)
     assert exploration_list_1 == [(30, (30, 0), ['F']), (32, (26, 20), [')']), (45, (42, 18), ["'"]), (46, (11, 45), ['#']), (47, (16, 45), ['T']), (48, (14, 46), ['F']), (52, (3, 52), ['_']), (57, (53, 23), ['~']), (59, (54, 26), [',']), (63, (63, 3), ['%']), (65, (5, 65), ['.']), (66, (15, 65), ['+']), (68, (40, 56), ['"']), (68, (67, 16), ["'"]), (69, (13, 68), ['#']), (70, (69, 15), ['T']), (74, (15, 73), [']']), (74, (60, 44), ['\\']), (74, (73, 17), ['}']), (81, (12, 81), ['[']), (81, (79, 21), ['"']), (81, (81, 4), ['F']), (82, (16, 81), ['&']), (82, (67, 48), ['>']), (83, (59, 59), ['&']), (83, (81, 19), ['G']), (84, (84, 6), ['{']), (87, (30, 82), [']']), (87, (75, 46), ['(']), (87, (87, 10), [')']), (88, (3, 88), ['T']), (88, (71, 52), ['*']), (91, (14, 90), ['+']), (93, (90, 26), [',']), (95, (54, 79), ['*']), (98, (29, 94), ['>']), (98, (98, 1), ["'"]), (99, (9, 99), ['`']), (99, (54, 83), ['\\']), (101, (46, 90), [']']), (103, (60, 84), ['!']), (105, (63, 85), [')']), (106, (56, 90), ['T']), (108, (52, 95), [']']), (110, (75, 81), ['[']), (111, (88, 69), ['[']), (113, (83, 78), [':']), (115, (75, 88), ['`']), (115, (95, 65), ['/']), (118, (84, 83), ['|'])]
 
-    expected_output = open('test_populated_world_1.txt')
+    expected_output = open('test_populated_galaxy_1.txt')
     output = expected_output.read()
-    assert output == display_world(world_map_1)
+    assert output == display_galaxy(galaxy_map_1)
 
 
-    exploration_list_2 = populate_world_map(available_symbols = available_symbols_2,
+    exploration_list_2 = populate_galaxy_map(available_symbols = available_symbols_2,
                                    available_coordinates = available_coordinates_2,
                                    occupied_coordinates = occupied_coordinates2,
-                                   world_map = world_map_2)
+                                   galaxy_map = galaxy_map_2)
     assert exploration_list_2 == [(21, (11, 18), ['*']), (29, (22, 19), ['F']), (32, (23, 23), ['^']), (48, (36, 32), ['^']), (57, (55, 16), ['^']), (57, (55, 17), ['*']), (67, (17, 65), ['^']), (67, (61, 29), ['^']), (77, (77, 5), ['G']), (79, (74, 29), ['&']), (80, (80, 6), ['*']), (83, (78, 29), ['^']), (85, (15, 84), ['^']), (89, (89, 6), ['*']), (90, (54, 73), ['T']), (90, (90, 4), ['^']), (94, (0, 94), ['T']), (94, (18, 93), ['F']), (96, (25, 93), ['&']), (97, (35, 91), ['F']), (103, (41, 95), ['&']), (107, (64, 86), ['^']), (121, (91, 80), ['&']), (126, (79, 99), ['F'])]
-    expected_output = open('test_populated_world_2.txt')
+    expected_output = open('test_populated_galaxy_2.txt')
     output = expected_output.read()
-    assert output == display_world(world_map_2)
+    assert output == display_galaxy(galaxy_map_2)
 
     path_list1 = calculate_path_to_goal(exploration_list_1)
     path_list2 = calculate_path_to_goal(exploration_list_2)
@@ -130,125 +130,125 @@ def test_populate_world_map():
     assert path_list2 == [(29, (22, 19), ['F']), (77, (77, 5), ['G'])]
 
 
-def test_symbols_not_used_in_world_return_type():
-    assert type(symbols_not_used_in_world(frozenset())) == frozenset
+def test_symbols_not_used_in_galaxy_return_type():
+    assert type(symbols_not_used_in_galaxy(frozenset())) == frozenset
 
 
-def test_symbols_not_used_in_world():
+def test_symbols_not_used_in_galaxy():
     seed(SEED_NUMBER)
     available_symbols_1 = define_possible_objects(punctuation)
     occupied_coordinates1 = list()
     available_coordinates_1 = generate_available_coordinates(MAP_SIZE)
-    world_map_1 = generate_empty_map(available_coordinates_1)
+    galaxy_map_1 = generate_empty_map(available_coordinates_1)
     available_symbols_2 = define_possible_objects('^&*'*5)
     occupied_coordinates2 = list()
     available_coordinates_2 = generate_available_coordinates(MAP_SIZE)
-    world_map_2 = generate_empty_map(available_coordinates_2)
-    populate_world_map(available_symbols = available_symbols_1,
+    galaxy_map_2 = generate_empty_map(available_coordinates_2)
+    populate_galaxy_map(available_symbols = available_symbols_1,
                                    available_coordinates = available_coordinates_1,
                                    occupied_coordinates = occupied_coordinates1,
-                                   world_map = world_map_1)
+                                   galaxy_map = galaxy_map_1)
 
-    populate_world_map(available_symbols = available_symbols_2,
+    populate_galaxy_map(available_symbols = available_symbols_2,
                                    available_coordinates = available_coordinates_2,
                                    occupied_coordinates = occupied_coordinates2,
-                                   world_map = world_map_2)
-    world2_symbols = get_unique_objects(world_map_2)
-    world1_symbols = get_unique_objects(world_map_1)
+                                   galaxy_map = galaxy_map_2)
+    galaxy2_symbols = get_unique_objects(galaxy_map_2)
+    galaxy1_symbols = get_unique_objects(galaxy_map_1)
 
-    assert symbols_not_used_in_world(world1_symbols) == frozenset(
+    assert symbols_not_used_in_galaxy(galaxy1_symbols) == frozenset(
         {';', '=', '-', '$', '<', '@', '?', '^'})
-    assert symbols_not_used_in_world(world2_symbols) == frozenset(
+    assert symbols_not_used_in_galaxy(galaxy2_symbols) == frozenset(
         {',', '-', '`', '{', ']', '_', '+', '(', '.', '$', ';', ')', '#', '!', '"', '>', '\\', "'", '[', '<', '@', '=',
          '?', '}', '%', '|', '~', '/', ':'})
 
 
-def test_objects_encountered_in_world1_not_world2_return_type():
-    assert type(objects_encountered_in_world1_not_world2(frozenset(), frozenset())) == frozenset
+def test_objects_encountered_in_galaxy1_not_galaxy2_return_type():
+    assert type(objects_encountered_in_galaxy1_not_galaxy2(frozenset(), frozenset())) == frozenset
 
 
-def test_objects_encountered_in_world1_not_world2():
+def test_objects_encountered_in_galaxy1_not_galaxy2():
     seed(SEED_NUMBER)
     available_symbols_1 = define_possible_objects(punctuation)
     occupied_coordinates1 = list()
     available_coordinates_1 = generate_available_coordinates(MAP_SIZE)
-    world_map_1 = generate_empty_map(available_coordinates_1)
+    galaxy_map_1 = generate_empty_map(available_coordinates_1)
     available_symbols_2 = define_possible_objects('^&*'*5)
     occupied_coordinates2 = list()
     available_coordinates_2 = generate_available_coordinates(MAP_SIZE)
-    world_map_2 = generate_empty_map(available_coordinates_2)
-    populate_world_map(available_symbols = available_symbols_1,
+    galaxy_map_2 = generate_empty_map(available_coordinates_2)
+    populate_galaxy_map(available_symbols = available_symbols_1,
                                    available_coordinates = available_coordinates_1,
                                    occupied_coordinates = occupied_coordinates1,
-                                   world_map = world_map_1)
+                                   galaxy_map = galaxy_map_1)
 
-    populate_world_map(available_symbols = available_symbols_2,
+    populate_galaxy_map(available_symbols = available_symbols_2,
                                    available_coordinates = available_coordinates_2,
                                    occupied_coordinates = occupied_coordinates2,
-                                   world_map = world_map_2)
-    world2_symbols = get_unique_objects(world_map_2)
-    world1_symbols = get_unique_objects(world_map_1)
+                                   galaxy_map = galaxy_map_2)
+    galaxy2_symbols = get_unique_objects(galaxy_map_2)
+    galaxy1_symbols = get_unique_objects(galaxy_map_1)
 
-    assert objects_encountered_in_world1_not_world2(world1_symbols, world2_symbols) == frozenset(
+    assert objects_encountered_in_galaxy1_not_galaxy2(galaxy1_symbols, galaxy2_symbols) == frozenset(
         {',', '\\', '+', '{', '}', '|', '_', ')', '(', '%', "'", '>', '/', ']', '"', ':', '[', '!', '~', '`', '.', '#'})
 
 
 
 
-def test_objects_encountered_in_world2_not_world1_return_type():
-    assert type(objects_encountered_in_world2_not_world1(frozenset(), frozenset())) == frozenset
+def test_objects_encountered_in_galaxy2_not_galaxy1_return_type():
+    assert type(objects_encountered_in_galaxy2_not_galaxy1(frozenset(), frozenset())) == frozenset
 
 
-def test_objects_encountered_in_world2_not_world1():
+def test_objects_encountered_in_galaxy2_not_galaxy1():
     seed(SEED_NUMBER)
     available_symbols_1 = define_possible_objects(punctuation)
     occupied_coordinates1 = list()
     available_coordinates_1 = generate_available_coordinates(MAP_SIZE)
-    world_map_1 = generate_empty_map(available_coordinates_1)
+    galaxy_map_1 = generate_empty_map(available_coordinates_1)
     available_symbols_2 = define_possible_objects('^&*'*5)
     occupied_coordinates2 = list()
     available_coordinates_2 = generate_available_coordinates(MAP_SIZE)
-    world_map_2 = generate_empty_map(available_coordinates_2)
-    populate_world_map(available_symbols = available_symbols_1,
+    galaxy_map_2 = generate_empty_map(available_coordinates_2)
+    populate_galaxy_map(available_symbols = available_symbols_1,
                                    available_coordinates = available_coordinates_1,
                                    occupied_coordinates = occupied_coordinates1,
-                                   world_map = world_map_1)
+                                   galaxy_map = galaxy_map_1)
 
-    populate_world_map(available_symbols = available_symbols_2,
+    populate_galaxy_map(available_symbols = available_symbols_2,
                                    available_coordinates = available_coordinates_2,
                                    occupied_coordinates = occupied_coordinates2,
-                                   world_map = world_map_2)
-    world2_symbols = get_unique_objects(world_map_2)
-    world1_symbols = get_unique_objects(world_map_1)
+                                   galaxy_map = galaxy_map_2)
+    galaxy2_symbols = get_unique_objects(galaxy_map_2)
+    galaxy1_symbols = get_unique_objects(galaxy_map_1)
 
-    assert objects_encountered_in_world2_not_world1(world1_symbols, world2_symbols) == frozenset({'^'})
+    assert objects_encountered_in_galaxy2_not_galaxy1(galaxy1_symbols, galaxy2_symbols) == frozenset({'^'})
 
-def test_objects_encountered_in_both_worlds_return_type():
-    assert type(objects_encountered_in_both_worlds(frozenset(), frozenset())) == frozenset
+def test_objects_encountered_in_both_galaxys_return_type():
+    assert type(objects_encountered_in_both_galaxys(frozenset(), frozenset())) == frozenset
 
 
-def test_objects_encountered_in_both_worlds():
+def test_objects_encountered_in_both_galaxys():
     seed(SEED_NUMBER)
     available_symbols_1 = define_possible_objects(punctuation)
     occupied_coordinates1 = list()
     available_coordinates_1 = generate_available_coordinates(MAP_SIZE)
-    world_map_1 = generate_empty_map(available_coordinates_1)
+    galaxy_map_1 = generate_empty_map(available_coordinates_1)
     available_symbols_2 = define_possible_objects('^&*'*5)
     occupied_coordinates2 = list()
     available_coordinates_2 = generate_available_coordinates(MAP_SIZE)
-    world_map_2 = generate_empty_map(available_coordinates_2)
-    populate_world_map(available_symbols = available_symbols_1,
+    galaxy_map_2 = generate_empty_map(available_coordinates_2)
+    populate_galaxy_map(available_symbols = available_symbols_1,
                                    available_coordinates = available_coordinates_1,
                                    occupied_coordinates = occupied_coordinates1,
-                                   world_map = world_map_1)
+                                   galaxy_map = galaxy_map_1)
 
-    populate_world_map(available_symbols = available_symbols_2,
+    populate_galaxy_map(available_symbols = available_symbols_2,
                                    available_coordinates = available_coordinates_2,
                                    occupied_coordinates = occupied_coordinates2,
-                                   world_map = world_map_2)
-    world2_symbols = get_unique_objects(world_map_2)
-    world1_symbols = get_unique_objects(world_map_1)
-    assert objects_encountered_in_both_worlds(world1_symbols, world2_symbols) == frozenset(
+                                   galaxy_map = galaxy_map_2)
+    galaxy2_symbols = get_unique_objects(galaxy_map_2)
+    galaxy1_symbols = get_unique_objects(galaxy_map_1)
+    assert objects_encountered_in_both_galaxys(galaxy1_symbols, galaxy2_symbols) == frozenset(
         {'_', '`', 'S', '~', '(', 'T', '>', '&', ':', 'F', '\\', ' ', '%', 'G', '{', '!', ']', ')', '+', '|', ',', "'",
          '"', '.', '*', '}', '/', '#', '[', '^'})
 
@@ -262,21 +262,21 @@ def test_common_objects_encountered():
     available_symbols_1 = define_possible_objects(punctuation)
     occupied_coordinates1 = list()
     available_coordinates_1 = generate_available_coordinates(MAP_SIZE)
-    world_map_1 = generate_empty_map(available_coordinates_1)
+    galaxy_map_1 = generate_empty_map(available_coordinates_1)
     available_symbols_2 = define_possible_objects('^&*' * 5)
     occupied_coordinates2 = list()
     available_coordinates_2 = generate_available_coordinates(MAP_SIZE)
-    world_map_2 = generate_empty_map(available_coordinates_2)
-    populate_world_map(available_symbols=available_symbols_1,
+    galaxy_map_2 = generate_empty_map(available_coordinates_2)
+    populate_galaxy_map(available_symbols=available_symbols_1,
                        available_coordinates=available_coordinates_1,
                        occupied_coordinates=occupied_coordinates1,
-                       world_map=world_map_1)
+                       galaxy_map=galaxy_map_1)
 
-    populate_world_map(available_symbols=available_symbols_2,
+    populate_galaxy_map(available_symbols=available_symbols_2,
                        available_coordinates=available_coordinates_2,
                        occupied_coordinates=occupied_coordinates2,
-                       world_map=world_map_2)
-    world2_symbols = get_unique_objects(world_map_2)
-    world1_symbols = get_unique_objects(world_map_1)
-    assert common_objects_encountered(world1_symbols, world2_symbols) == frozenset({' ', '*', '&', 'T', 'F', 'G', 'S'})
+                       galaxy_map=galaxy_map_2)
+    galaxy2_symbols = get_unique_objects(galaxy_map_2)
+    galaxy1_symbols = get_unique_objects(galaxy_map_1)
+    assert common_objects_encountered(galaxy1_symbols, galaxy2_symbols) == frozenset({' ', '*', '&', 'T', 'F', 'G', 'S'})
 
