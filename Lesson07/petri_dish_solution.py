@@ -308,54 +308,19 @@ class PetriDish:
 
 
 
-def activity1_task1a():
+def activity1_task1():
     petri_dish = PetriDish(size=5)
     petri_dish.begin_simulation()
     return petri_dish
 
 
-def activity1_task1b():
-    petri_dish = PetriDish(size=10)
-    petri_dish.begin_simulation()
-    return petri_dish
-
-
-def activity1_task1c():
-    petri_dish = PetriDish(size=20)
-    petri_dish.begin_simulation()
-    return petri_dish
-
-
-def activity1_task1d():
-    petri_dish = PetriDish()
-    petri_dish.begin_simulation()
-    return petri_dish
-
-
-def activity1_task2a():
-    petri_dish = PetriDish(30)
-    petri_dish.add_to_world(Cell())
-    petri_dish.begin_simulation()
-
-    return petri_dish
-
-
-def activity1_task2b():
-    petri_dish = PetriDish(30)
-    petri_dish.add_to_world(Cell(position=(10, 10)))
-    petri_dish.begin_simulation()
-
-    return petri_dish
-
-
-def activity1_task2c():
+def activity1_task2():
     petri_dish = PetriDish(30)
     petri_dish.add_to_world(Cell(position=(5, 5)))
     petri_dish.add_to_world(Cell(position=(10, 10)))
     petri_dish.add_to_world(Cell(position=(0, 0)))
     petri_dish.add_to_world(Cell(position=(15, 15)))
     petri_dish.begin_simulation()
-
     return petri_dish
 
 
@@ -523,13 +488,8 @@ if __name__ == '__main__':
     # uncomment the relevant task as needed. Complete the tasks in order.
 
 
-    # activity1_task1a()
-    # activity1_task1b()
-    # activity1_task1c()
-    # activity1_task1d()
-    # activity1_task2a()
-    # activity1_task2b()
-    # activity1_task2c()
+    # activity1_task1()
+    # activity1_task2()
     # activity1_task3()
 
     # activity2_task1()

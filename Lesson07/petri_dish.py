@@ -220,57 +220,22 @@ class PetriDish:
 
 
 
-def activity1_task1a():
+def activity1_task1:
     petri_dish = PetriDish()
     # replace with your implementation
-
     return petri_dish
 
 
-def activity1_task1b():
+def activity1_task2():
     petri_dish = PetriDish()
     # replace with your implementation
-
     return petri_dish
 
-
-def activity1_task1c():
-    petri_dish = PetriDish()
-    # replace with your implementation
-
-    return petri_dish
-
-
-def activity1_task1d():
-    petri_dish = PetriDish()
-    # replace with your implementation
-
-    return petri_dish
-
-
-def activity1_task2a():
-    petri_dish = PetriDish()
-    # replace with your implementation
-
-    return petri_dish
-
-def activity1_task2b():
-    petri_dish = PetriDish()
-    # replace with your implementation
-
-    return petri_dish
-
-def activity1_task2c():
-    petri_dish = PetriDish()
-    # replace with your implementation
-
-    return petri_dish
 
 def activity1_task3():
     seed(SEED_NUMBER) #do not alter this
     petri_dish = PetriDish()
     # replace with your implementation
-
     return petri_dish
 
 
@@ -278,7 +243,6 @@ def activity2_task1():
     seed(1) #do not alter this
     petri_dish = PetriDish()
     #replace with your implementation
-
     return petri_dish
 
 
@@ -286,7 +250,6 @@ def activity2_task2():
     seed(2) #do not alter this
     petri_dish = PetriDish()
     #replace with your implementation
-
     return petri_dish
 
 
@@ -294,14 +257,12 @@ def activity2_task3():
     seed(3) #do not alter this
     petri_dish = PetriDish()
     #replace with your implementation
-
     return petri_dish
 
 def activity2_task4():
     seed(4) #do not alter this
     petri_dish = PetriDish()
     #replace with your implementation
-
     return petri_dish
 
 
@@ -367,13 +328,8 @@ if __name__ == '__main__':
     # uncomment the relevant task as needed. Complete the tasks in order.
 
 
-    # activity1_task1a()
-    # activity1_task1b()
-    # activity1_task1c()
-    # activity1_task1d()
-    # activity1_task2a()
-    # activity1_task2b()
-    # activity1_task2c()
+    # activity1_task1()
+    # activity1_task2()
     # activity1_task3()
     #
     # activity2_task1()
