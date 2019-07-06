@@ -15,6 +15,7 @@ empty_cell = ' '
 
 replication_cells = ['up', 'right', 'down', 'left']
 
+# This is used to place the replicated cell relative to the current cell at position (0,0)
 replication_order = {
     'up': (-1, 0),
     'right': (0, 1),
@@ -24,6 +25,9 @@ replication_order = {
 
 
 class Cell:
+    '''
+    The base class that needs to be extended for this exercise. .
+    '''
     count = 0
 
     def __init__(self, position=(0, 0)):
@@ -37,26 +41,49 @@ class Cell:
         return self.symbol
 
     def _set_symbol(self):
+        '''
+        The symbol to represent this cell
+        '''
         return 'c'
 
     def _set_lifespan(self):
+        '''
+        lifespan is how many ticks the cell will last before it dies.
+        '''
         return 100
 
     def get_location(self):
+        '''
+        return a string representation of the location of the cell in the simulation.
+        '''
         return f'(x={self.x}, y={self.y})'
 
     def intended_position(self):
+        '''
+        The intended position the cell will move to. This is the function that determines how the cells move.
+        Currently for the base class clearly they do not move.
+        For the extended classes this may not be the case.
+        '''
         return (self.x, self.y)
 
     def set_location(self, position):
+        '''
+        Change the location of the cell to the new position.
+        '''
         self.x, self.y = position
 
     @staticmethod
     def reduce_count():
+        '''
+        reduce the number of cells of this type. Called when a cell dies.
+        '''
         Cell.count -= 1
 
     @staticmethod
     def reset_count():
+        '''
+        Reset the number of cells of this type to 0.
+        '''
         Cell.count = 0
 
 
@@ -79,11 +106,17 @@ class HunterKiller(Cell):
 
 
 def reset_all_cell_counts():
+    '''
+    This function should change the count of all cell types to 0.
+    '''
     cell_types = [Cell, Generic, Ecoli, Structure, HunterKiller]
     #insert your code here
 
 
 class PetriDish:
+    '''
+    This is the main "grid" upon which the simulation takes place.
+    '''
     def __init__(self, size=30):
         self.SIZE = size
         self.all_positions = []
@@ -144,6 +177,10 @@ class PetriDish:
         print(f'Hunter Killer Kill Count: {HunterKiller.kill_count}')
 
     def tick(self):
+        '''
+        The function that progresses the simulation by a single tick. Each time this function is called the world ticks up
+        in terms of a single simulation step. All cells should age by 1 count, and all simulation tasks are performed.
+        :return        '''
         self.world_state.append(self.__repr__())
         self.counter += 1
 
@@ -159,8 +196,11 @@ class PetriDish:
                 cell.lifespan -= 1
 
             if cell.symbol == 'e':
+                # do something special for ecoli
 
                 if self.counter % 3 == 0:
+                    # ecoli replicate every 3 turns given certain requirements are met:
+
                     for replication_cell in replication_cells:
                         test_pos = (cell.x + replication_order[replication_cell][0],
                                     cell.y + replication_order[replication_cell][1])
@@ -198,6 +238,13 @@ class PetriDish:
         self.update_world()
 
     def begin_simulation(self, max_iterations=100000, delay=0.1, movement=False):
+        '''
+        The function that is called to begin the simulation.
+        :param max_iterations: The maximum number of iterations
+        :param delay: To control the viewing speed of the simulation. Increase this value to slow down the simulation.
+        :param movement: if set to false the world will stop after the first tick. If set to True, the simulation will execute to completion.
+        :return:
+        '''
         self.max_iterations = max_iterations
         while self._has_world_changed() and self.counter < self.max_iterations:
             self.print_header()
@@ -209,6 +256,12 @@ class PetriDish:
                 break
 
     def simulate_n_steps(self, delay=0.1, iterations = 1):
+        '''
+        Control the number of steps to progress in the simulation.
+        :param delay: To control the viewing speed of the simulation. Increase this value to slow down the simulation.
+        :param iterations: Number of iterations to progress
+        :return:
+        '''
         for _ in range(iterations):
             self.print_header()
             print(self)
@@ -220,7 +273,7 @@ class PetriDish:
 
 
 
-def activity1_task1:
+def activity1_task1():
     petri_dish = PetriDish()
     # replace with your implementation
     return petri_dish
