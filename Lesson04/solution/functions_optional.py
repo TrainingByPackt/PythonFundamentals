@@ -1,31 +1,13 @@
-# Importing extended mailing list challenge
-import time
+def format_currency(value, currency='USD'):
+    """This is an auxiliary function to format plain double precision numbers into currency style.
 
-from Lesson04.solution.functions import update_mailing_list as ml_updater
-
-
-def send_message_interval(mailing_list):
+    :param value: the original value to be formatted
+    :param currency: the 3-digits country code to identify the country's currency
     """
-         This function contains a unit test to check whether the return of the function `test_send_email_at_interval`
-            is correct.
+    precision_pattern = "{0:.2f} "
 
-            This function update the mailing list (as the other previous 2), but then simulate an engine to send
-            emails to user at a 30 seconds interval. In other words, each user id must be printed after 30 seconds.
+    formatted_value = precision_pattern + currency
 
-    :param mailing_list: the original mailing list with all the users
-    :return ids: the list of ids of the active users
-    """
+    return formatted_value.format(value)
 
-    # Array to hold users ids
-    ids = []
-
-    # Loop through the mailing list
-    for item in ml_updater(mailing_list):
-        # Append the resulting ids to the list
-        ids.append(item)
-
-        # 30 seconds delay after 'send' the next email
-        time.sleep(30)
-
-    # return the list of ids
-    return ids
+# print(format_currency(100000, 'BRL'))
