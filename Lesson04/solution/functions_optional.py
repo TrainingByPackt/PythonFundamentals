@@ -10,4 +10,5 @@ def format_currency(value, currency='USD'):
 
     return formatted_value.format(value)
 
-# print(format_currency(100000, 'BRL'))
+
+print(format_currency(100000, 'USD'))

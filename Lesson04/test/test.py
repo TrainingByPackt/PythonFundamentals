@@ -12,21 +12,21 @@ sys.path.append("../")
 class TestCalculateGains(unittest.TestCase):
 
     def test_calculate_gains(self) -> None:
-        """
-
+        """ This function tests the `calculate_gains` function and checks whether the expected result is returned
+        by the function.
 
         :return: N/A
 
         """
 
         result = calculate_gains(2000000)
-        expected_result = 2002040.0
+        expected_result = 2002040.00
 
         self.assertAlmostEqual(result[0], expected_result, delta=100)
 
     def test_calculate_gains_over_time(self) -> None:
-        """
-
+        """ This function tests the `calculate_gains_over_time` function and checks whether the expected result is
+         returned by the function.
 
         :return: N/A
 
@@ -38,7 +38,8 @@ class TestCalculateGains(unittest.TestCase):
         self.assertAlmostEqual(result[0], expected_result, delta=100)
 
     def test_format_currency(self) -> None:
-        """
+        """ This function tests the `format_currency` function and checks whether the expected result is returned
+        by the function.
 
 
         :return: N/A

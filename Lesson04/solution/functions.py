@@ -20,21 +20,27 @@ def calculate_gains(amount_inv=0.0):
     # base amount gain margin
     gain_margin = .001
 
-    # check whether the invested amount is greater than the multiplier amount
-    if amount_inv > multiplier_amount:
-        # gather the mod of the division
-        mod = amount_inv // multiplier_amount
+    total_amount_gains = 0
 
-        # update the `gain_margin` by the multiplier mod
-        gain_margin = ((1 + (mod / 100)) * gain_margin)
+    total_gains = 0
 
-    # calculate the total amount with gains
-    total_amount_gains = (amount_inv * gain_margin) + amount_inv
+    if amount_inv > 1000:
 
-    # calculate the total amount plus the gain margin
-    total_gains = amount_inv * gain_margin
+        # check whether the invested amount is greater than the multiplier amount
+        if amount_inv > multiplier_amount:
+            # gather the mod of the division
+            mod = amount_inv // multiplier_amount
 
-    # return
+            # update the `gain_margin` by the multiplier mod
+            gain_margin = ((1 + (mod / 100)) * gain_margin)
+
+        # calculate the total amount with gains
+        total_amount_gains = (amount_inv * gain_margin) + amount_inv
+
+        # calculate the total amount plus the gain margin
+        total_gains = amount_inv * gain_margin
+
+    # return the invested amount plus the gains, the gains only and the gain margin
     return total_amount_gains, total_gains, gain_margin
 
 # print(calculate_gains(amount_inv=2000000))
