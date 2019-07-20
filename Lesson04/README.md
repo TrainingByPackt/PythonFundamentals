@@ -3,63 +3,26 @@ This folder contains the artifacts for the chapter 4 of the the "Python Fundamen
 the creation of a code challenge about **functions**. 
 
 For this code challenge, there is a basic and an extended exercise. A basic exercise will test the student's ability
-to work with functions, parameters, iterations, and data structures such as dictionaries with python native.
-The extended version will require a little more creativity from the student to take the original problem a little 
-further and work with dictionary sorting capabilities. 
+to work with functions, parameters, return statement, local and global variables.
 
 A more detailed document for this project can be found [here](https://docs.google.com/document/d/1IXZSLZMVXzdgJ-mOFpOp0MKEcT_mu1SaKDDBxuIAG2k/edit?usp=sharing).
 
 ## **Project Description**
-Write a function that reads the mailing list with 15 users provided to you as python dictionary and return the ids of the users that we are able to communicate.
+Develop a functionality to calculate the return on investment for an invest app. The standard gain margin is 0.001% per month, plus 1% each time the amount surpasses 1 million dollars. For example:
 
-**To update the mailing list, there are some requirements:**
-- Remove users that contain the attributes "opt-out", "unsubscribed", or "OPT-OUT" from the list (tip: use str.lower() to transform strings to lowercase)
-- The system only sends messages to corporate emails, so filter out 'gmail' users
-- Return a list of the users ids that are able to be notified, that is, the remaining users
+If the amount invested is 5000000 (five million dollars), then the gain margin would be:
+0.001% + 5%.
 
-**This dictionary has the following schema:**
-
-- **uuid**: the user's unique identifier
-- **username**: the user's personal nickname
-- **email**: the user's email
-- **subscribe_status**: the status of a user in the mailing list; the following values are found: 'opt-out', 'OPT-OUT', 'unsubscribed', and 'active '
-
-Consider the following dictionary as our mailing list:
-
-
- ```
- mailing_list = dict({'307919e9-d6f0-4ecf-9bef-c1320db8941a': ['afarrimond0', 'thartus0@reuters.com', 'opt-out'],
-                     '68a32cae-847a-47c5-a77c-0d14ccf11e70': ['tdelicate1', 'skinmond1@ca.gov', 'opt-out'],
-                     '8743d75d-c62a-4bae-8990-3390fefbe5c7': ['edelahuntyk', 'fglossup2@gmail.com', 'OPT-OUT'],
-                     'a50bd76f-bc4d-4141-9b5d-3bfb9cb4c65d': ['tdelicate10', 'hpatel3@springer.com', 'active'],
-                     '26edd0b3-0040-4ba9-8c19-9b69d565df36': ['ogelder2', 'bissett4@mozilla.org', 'unsubscribed'],
-                     '5c96189f-95fe-4638-9753-081a6e1a82e8': ['bnornable3', 'aerrett5@over-blog.com', 'opt-out'],
-                     '480fb04a-d7cd-47c5-8079-b580cb14b4d9': ['csheraton4', 'pgatherell6-1.com', 'active'],
-                     'd08649ee-62ae-4d1a-b578-fdde309bb721': ['tstodart5', 'schasmoor7@gmail.com', 'active'],
-                     '5772c293-c2a9-41ff-a8d3-6c666fc19d9a': ['mbaudino6', 'hpatel3@springer.com', 'unsubscribed'],
-                     '9e8fb253-d80d-47b5-8e1d-9a89b5bcc41b': ['paspling7', 'dandersen9@mozilla.org', 'active'],
-                     '055dff79-7d09-4194-95f2-48dd586b8bd7': ['mknapton8', 'vlewndenh@spiegel.de', 'active'],
-                     '5216dc65-05bb-4aba-a516-3c1317091471': ['ajelf9', 'kmacpaikei@purevolume.com', 'unsubscribed'],
-                     '41c30786-aa84-4d60-9879-0c53f8fad970': ['cgoodleyh', 'ccowlinj@hp.com', 'active'],
-                     '3fd55224-dbff-4c89-baec-629a3442d8f7': ['smcgonnelli', 'dcarragherk@gmail.com', 'opt-out'],
-                     '2ac17a63-a64b-42fc-8780-02c5549f23a7': ['mmayoralj', 'bparsissonl@domainmarket.com',
-                                                              'unsubscribed']}) 
-                                                              
- ```
-                                                              
-                                                              
-Please, use the provided dict in your project.
-
-
+Note: AppInvest is a fictitious investment software company especially created for the purpose of this code challenge.
+                                                  
+    
 **Example:**
 
 **Input :** 
 
 ```
 
-  '5216dc65-05bb-4aba-a516-3c1317091471': ['ajelf9', 'kmacpaikei@purevolume.com', 'unsubscribed'],
-  '41c30786-aa84-4d60-9879-0c53f8fad970': ['cgoodleyh', 'ccowlinj@hp.com', 'active'],
-  '3fd55224-dbff-4c89-baec-629a3442d8f7': ['smcgonnelli', 'dcarragherk@gmail.com', 'active']
+  calculate_gains(amount_inv=2000000)
   
 ```
 
@@ -67,7 +30,7 @@ Please, use the provided dict in your project.
 
 ```
 
-['41c30786-aa84-4d60-9879-0c53f8fad970'] # just the id of the user that has not been removed from the mailing list.
+2002040.0 # the amount invested plus the gains.
 
 ```
 
@@ -75,29 +38,40 @@ Please, use the provided dict in your project.
 The solution code for this challenge can be found [here](https://github.com/luizhenriqueds/packt-courseware/blob/master/projects/chapter-4/functions.py).
 
 ## **Take home extension**
-**Bellow there is a general overview of this extension project:**
-- Update the mailing list or get the user objects from the previous exercise
-- Order the list of active users by the username column
-- Collect the user ids after sorting the list by username column
-- Return the list of active users ids in the same format as the previous exercise
+Another anticipated functionality for the app is the ability to estimate the return on investment over a period of time. In order to implement this feature, you will have to update the investment calculator algorithm. The base function to calculate the return on investment from Task 1 can be reutilized here to simplify our task and make use of a very popular strategy in software development in real-life: code reuse.  
 
-**Tip:** It is a little problematic to work with sorting dictionaries keys by a specific value in python native.
-However, there is a very useful utility library to efficiently perform intrinsic operations in python, and it
-is called **operator**. The operator module has a very useful **itemgetter** function that is capable of sorting
-a list of tuples by the ith element. Consider taking a look at this function.
+This feature will take into consideration a maximum of 1-year period by default, and an extension will be added to the software in the future. 
+
+To calculate the total amount earned over a period of time, you will have to loop through the n-months period (let's keep 12 months for this exercise), and accumulate the gains for each month-period. The other rules from the previous task apply here as well.
+
+**To summarize:**
+- Loop over a period of 12 months to calculate the return on investment for each period
+- Calculate the gains for each month and store it in a variable
+- Accumulate the gains for all the months 
+- Return the accumulated estimated value for a period of 12 months
+
+
+**Hint:** Note that to calculate the accumulated value over a 12-month period is not just multiply the gain of every month
+by 12 (or N). In this case, the gain of every month is added to the original value, updating the amount to be invested
+in the subsequent month.
 
 The solution code for the extended challenge can be found [here](https://github.com/luizhenriqueds/packt-courseware/blob/master/projects/chapter-4/functions_extended.py).
 
 ## **Optional exercise**
-In order to align the sale of the items being promoted in the email marketing campaign to the other companies' 
-call centers, we were asked to implement a more advanced feature. After running your solution for a few months,
-they realized that their call center could not keep up the pace to attend several users calling at the same time.
-For this reason, they want you to send email campaigns in batches, that is, not all the email would be sent at the
-same time, but at small interval instead. They suggested a 30 seconds interval (which is the average time of 
-call center attender to do his job) to trigger the emails. Therefore, for the remaining ids, simulate a 
-sending engine with the interval of 30 seconds. 
+As the algorithm performs division of numbers with high precision, it is very common to see really big numbers after
+the period (for example: 1200.2300001), which is not desirable because of some reasons: 1. may cause confusion to some
+users when they see such big numbers; 2. uses more memory to store a bigger number, and 3. it just does not make
+sense to display currency number in this format. 
 
-Tip: Just print the user id with a delay of 30 seconds for each id.
+For this reason, in this bonus project you are going to implement a utility function to format any number into the
+appropriate currency format, using 2 decimal places. Also, the function should be able to receive a parameter with the 
+desired country code to convert the monetary information. A currency country code is a standardized 3-digit code that 
+every country possesses. A list of the all the codes can be found here.
+
+For example: 
+The number 1200.2300001 would be became: 1200.23 USD (for United States Dollar).
+
+**Hint:** Take a look at the formatting options for python native.
 
 
 
