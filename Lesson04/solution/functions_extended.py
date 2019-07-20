@@ -1,7 +1,5 @@
 from Lesson04.solution.functions import calculate_gains
 
-from Lesson04.solution.functions_optional import format_currency
-
 
 # not official way to calculate "gains" over money investment
 def calculate_gains_over_time(amount_inv=0.0, period=6):
@@ -25,8 +23,6 @@ def calculate_gains_over_time(amount_inv=0.0, period=6):
     # loop through the specified period to calculate the gain of each month
     # 1 to period -1 because the first period gains is already calculated above
     for i in range(1, period):
-        print('month:{} - new_amount: {} '.format(i + 1, format_currency(new_amount, 'USD')))
-
         # call the function to update the value based on the period inside the loop and the updated amount
         total_amount_gains, total_gains, gain_margin = calculate_gains(new_amount)
 
@@ -35,8 +31,7 @@ def calculate_gains_over_time(amount_inv=0.0, period=6):
         # print(total_gains)
         acc_gains += total_gains
 
-    # return
+    # return the amount plus the gains and the accumulated gains
     return amount_inv + acc_gains, acc_gains
 
-
-#print(calculate_gains_over_time(amount_inv=10000, period=12))
+# print(calculate_gains_over_time(amount_inv=10000, period=12))
