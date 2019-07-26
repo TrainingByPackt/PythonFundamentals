@@ -8,9 +8,8 @@ base_url = '../dataset/'
 
 def read_mailing_list_file(filename, io_mode):
     """
-        This function reads in the original dataset from a `csv` file, transforms it in a python dictionary, which
-        is the same format we used on the functions exercise on chapter 4, and pass the data to the
-        `update_mailing_list_extended` function to filter out the `unsubscribed` users. After that, we return the ids
+        This function reads in the original dataset from a `csv` file, transforms it in a python dictionar,
+        and pass the data to the `update_mailing_list` function to filter out the `unsubscribed` users. After that, we return the ids
         of the active users.
 
     :param filename: the filename of the original dataset we are going to read the data from.
@@ -54,7 +53,7 @@ def read_mailing_list_file(filename, io_mode):
     # Transforming the list of tuples into a python dictionary
     mailing_dict = (dict(mailing_list_buffer))
 
-    # Call the `update_mailing_list_extended` from chapter 4 passing the mailing list dictionary
+    # Call the `update_mailing_list` passing the mailing list dictionary
     updated_mailing_list_ids = update_mailing_list(mailing_dict)
 
     # Return the resulting ids of the active users
@@ -63,7 +62,7 @@ def read_mailing_list_file(filename, io_mode):
 
 def save_output_file(updated_mailing_list, output_filename, io_mode):
     """
-        This functions receives the list of ids of the active users (or updated mailing list) and saves the data
+        This function receives the list of ids of the active users (or updated mailing list) and saves the data
         into another file.
 
     :param updated_mailing_list: the list of ids of the active users in our CRM system database.
@@ -75,9 +74,9 @@ def save_output_file(updated_mailing_list, output_filename, io_mode):
     # Open the output file with the `with` context manager
     with open(base_url + output_filename, io_mode) as active_users_file:
         # Create a csv_writer object that will be responsible to persist the active users ids to a resulting
-        # csv file. Note: In order to make the final output clearer and similar to the chapter 4 function output,
-        # we are using the '\n' delimiter to write the results to file. That means that the output file will not be
-        # comma separated (as csv implies), but it is still a csv file.
+        # csv file. Note: In order to make the final output clearer, we are using the '\n' delimiter to write
+        #  the results to file. That means that the output file will not be comma separated (as csv implies),
+        #  but it is still a csv file.
         csv_writer = csv.writer(active_users_file, delimiter='\n', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 
         # Writing each user id as a new row to the file
@@ -87,8 +86,8 @@ def save_output_file(updated_mailing_list, output_filename, io_mode):
 def mailinglist_validation_util(filename, output_filename, io_mode):
     """
         This function is the main entry point to trigger the other functions to handle file operations. First, we call
-        the `read_mailing_list_file` to read the original dataset and process it with the `update_mailing_list_extended`
-        function from chapter 4. Then, we cache the resulting active users ids list.
+        the `read_mailing_list_file` to read the original dataset and process it with the `update_mailing_list`
+        function. Then, we cache the resulting active users ids list.
 
         Next, we call the `save_output_file` function to persist the users ids to an output csv file.
 
@@ -109,8 +108,7 @@ def mailinglist_validation_util(filename, output_filename, io_mode):
     :param output_filename: the name of the output file with the persisted ids for the active users. In our case
     it's `output.csv`.
     :param io_mode: array with the file operations for each function (`read_mailing_list_file` and `save_output_file`).
-    :return: the length of the output file. We return this length to check it matches our previous update mailing ist
-    function from chapter 4.
+    :return: the length of the output file.
 
     """
 
